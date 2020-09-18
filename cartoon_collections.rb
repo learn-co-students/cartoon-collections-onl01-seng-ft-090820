@@ -6,20 +6,36 @@ def roll_call_dwarves(dwarves)
   end
 end
 
-require 'pry'
-def summon_captain_planet(planeteer_calls)
-  planeteer_calls.each do |name|
-    name..titleize
+
+
+require'pry'
+def summon_captain_planet(names)
+  names.collect do |word| 
+    word.capitalize << "!"
   end
-  planeteer_calls
-  binding.pry
+  #binding.pry
 end
 
-def long_planeteer_calls# code an argument here
-  # Your code here
+def long_planeteer_calls(array)
+  array.each do |words|
+    if words.length >= 4
+      return true
+    end
+  end
+  return false
 end
 
-def find_the_cheese# code an argument here
-  # the array below is here to help
+
+
+
+def find_the_cheese(array)
   cheese_types = ["cheddar", "gouda", "camembert"]
+  cheese = "cheddar" || "gouda" || "camembert"
+  array.each do |string|
+    if string == cheese
+      return cheese
+      
+    end
+  end
+  return nil
 end
