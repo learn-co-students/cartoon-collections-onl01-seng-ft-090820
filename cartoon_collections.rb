@@ -1,10 +1,3 @@
-dwarfs = ["Doc", "Dopey", "Bashful", "Grumpy"]
-def roll_call_dwarves(dwarfs)
-  dwarfs.each_with_index do | name , index |
-    puts "#{index + 1} #{name}"
-  end
-end
-
 #def summon_captain_planet(veggies)
     #planeteer_calls = ["earth", "wind", "fire", "water", "heart"]
     #veggies.collect do |call| 
@@ -12,20 +5,43 @@ end
     #end
 #end
 
-def long_planteer_calls(long_planteer_calls)
-  answer = false
-  long_planteer_calls.each do |call|
-    if call.length > 4
-      answer = true
-    end
-    answer
-    end
+ddwarves = ["Doc", "Dopey", "Bashful", "Grumpy"]
+planeteer_calls = ["earth", "wind", "fire", "water", "heart"]
+call_screams = ["bo", "bam", "boom", "bazam", "powzer"]
+
+def roll_call_dwarves(array)
+  i = 0 
+  while i < array.length 
+    puts "#{i + 1}. #{array[i]}"
+    i += 1 
+  end 
 end
 
+roll_call_dwarves(dwarves)
 
-def find_the_cheese 
-  cheese_types = ["cheddar", "gouda", "camembert"]
-  cheese.find do |cheese|
-    cheese_types.include?(cheese)
-  end
+
+
+def summon_captain_planet(array)
+  nu_array = []
+  i = 0 
+  while i < array.length 
+    nu_array << array[i].capitalize + "!"
+    i += 1 
+  end 
+  nu_array
 end
+
+summon_captain_planet(planeteer_calls)
+
+
+def long_planeteer_calls(array) 
+  i = 0 
+  if  array.any? {|i| i.length > 4}
+    return true
+  else 
+    return false
+  i = i + 1
+  end 
+end
+
+long_planeteer_calls(call_screams)
